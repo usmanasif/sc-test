@@ -6,5 +6,16 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+import React from "react";
+import ReactDOM from "react-dom";
 
-console.log('Hello World from Webpacker')
+import App from "../src/App";
+
+import "whatwg-fetch";
+
+document.addEventListener("DOMContentLoaded", () => {
+  ReactDOM.render(
+    <App />,
+    document.getElementById("react-root")
+  );
+});
