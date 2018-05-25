@@ -22,4 +22,9 @@ table tr:nth-child(even) {
   background: gray;
   color: white;
   border-radius: 3px;
+  margin-bottom: 3px;
+}
+
+.submit-btn:disabled {
+  background-color: #cdcdcd;
 }

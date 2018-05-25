@@ -34,6 +34,31 @@ const reducer = (state = initialState, { type, payload }) => {
         errors: payload
       };
 
+    case "PATIENT_UI_CREATE_PATIENT_LOADING":
+      return {
+        ...state,
+        patientLoading: true,
+        patients: null
+      };
+
+    case "PATIENT_UI_CREATE_PATIENT_SUCCESS":
+      return {
+        ...state,
+        patientLoading: false,
+        patientErrors: null,
+        patientSuccess: true,
+        patients: payload.patients,
+        prescriptionDetails: payload.prescriptionDetails
+      };
+
+    case "PATIENT_UI_CREATE_PATIENT_FAILURE":
+      return {
+        ...state,
+        patientLoading: false,
+        patientErrors: payload,
+        patientSuccess: false
+      };
+
     default:
       return state;
   }

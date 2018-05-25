@@ -1,5 +1,5 @@
 import React from "react";
-import { reduxForm, Field, formValueSelector } from "redux-form";
+import { reduxForm, Field, formValueSelector, reset } from "redux-form";
 import { connect } from "react-redux";
 import { map } from "lodash";
 
@@ -41,7 +41,8 @@ const Form = ({
   ingredients,
   formulations,
   recipeItems,
-  selectedFormulation
+  selectedFormulation,
+  reset
 }) => (
   <form onSubmit={handleSubmit}>
     <fieldset>
@@ -109,12 +110,18 @@ const Form = ({
       </div>
     </fieldset>
     <button type="submit" className="submit-btn">
-      Generate PDF
+      Create Patient
+    </button>
+    <button type="button" className="submit-btn" onClick={reset}>
+      Reset
     </button>
   </form>
 );
 
 const withForm = reduxForm({ form: "patientForm" })(Form);
+const mapDispatchToProps = {
+  reset: reset("patientForm")
+};
 
 export default connect(
   ({ patientUI: { ingredients, formulations, recipeItems }, ...rest }) => ({
@@ -123,5 +130,6 @@ export default connect(
     recipeItems,
     selectedFormulation: selector(rest, "formulationId"),
     initialValues: formInitialValues(formulations, recipeItems)
-  })
+  }),
+  mapDispatchToProps
 )(withForm);

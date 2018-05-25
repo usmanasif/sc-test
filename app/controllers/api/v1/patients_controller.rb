@@ -3,7 +3,7 @@ module Api
     class PatientsController < BaseController
       def create
         patient = Patient.create!(create_params)
-        render_json serialize(patient, include: %[prescription_details])
+        render_json serialize(patient, include: %i[prescription_details])
       end
 
       private

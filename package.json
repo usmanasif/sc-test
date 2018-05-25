@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
+    "html2pdf.js": "^0.9.0",
     "json-api-normalizer": "^0.4.10",
     "lodash": "^4.17.10",
     "normalize.css": "^8.0.0",
