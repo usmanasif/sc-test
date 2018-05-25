@@ -4,4 +4,6 @@ class Patient < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :dob, presence: true
+
+  accepts_nested_attributes_for :prescription_details
 end
