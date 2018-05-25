@@ -6,6 +6,7 @@
     "babel-preset-react": "^6.24.1",
     "json-api-normalizer": "^0.4.10",
     "lodash": "^4.17.10",
+    "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

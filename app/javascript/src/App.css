@@ -1,0 +1,25 @@
+body {
+  padding: 15px 15px;
+}
+
+input,
+select {
+  padding: 3px 8px;
+  margin: 3px 8px;
+  border-radius: 3px;
+}
+
+fieldset {
+  margin-bottom: 10px;
+}
+
+table tr:nth-child(even) {
+  background-color: #ededed;
+}
+
+.submit-btn {
+  padding: 3px 8px;
+  background: gray;
+  color: white;
+  border-radius: 3px;
+}
